@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnergyDrink Frontend</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Energy Drink List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Price (DKK)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="drink in drinks" :key="drink.id">
+          <td>{{ drink.name }}</td>
+          <td>{{ translateType(drink.type) }}</td>
+          <td>{{ drink.price.toFixed(2) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
